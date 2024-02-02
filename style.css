@@ -11,6 +11,17 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-image: url("https://winedharma.com/wine-dharma/uploads/2020/10/3116-paloma-cocktail-con-tequila-succo-di-lime-e-soda-al-pompelmo-drink-messicano.jpg");
+    background-size: cover;
+    background-position: center;
+    color: rgb(218, 69, 0);
+    background-repeat: no-repeat;
+    
+}
+
+.container h1{
+    font-size:40px;
+    color: rgb(218, 69, 0);
 }
 
 .card {
@@ -49,6 +60,9 @@
     font-size: 20px;
     padding: 10px 20px;
     margin: 10px;
+    background-color: transparent;
+    color: rgb(218, 69, 0);
+
 }
 
 #scegli {
@@ -57,8 +71,8 @@
     margin: 10px;
     border-radius: 10px;
     border: none;
-    background-color: aqua;
+    background-color: rgb(218, 69, 0);
 }
 #scegli:hover{
-    background-color: rgb(38, 126, 126);
+    background-color: rgb(170, 54, 0);;
 }

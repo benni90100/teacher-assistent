@@ -1,4 +1,5 @@
 const card = document.querySelector(`.card`)
+const container = document.querySelector(`.container`)
 const cocktailInput = document.querySelector(`#cocktail`)
 const buttonCocktail = document.querySelector(`#scegli`)
 async function cocktailFetch() {
@@ -9,7 +10,6 @@ async function cocktailFetch() {
     const res = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktail}`)
     const cocktailData = await res.json()
     const cocktails = cocktailData.drinks[0]
-
     const image = document.createElement(`img`)
     image.setAttribute(`src`, cocktails.strDrinkThumb)
     image.classList.add(`image`)
