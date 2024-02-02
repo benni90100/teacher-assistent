@@ -2,9 +2,10 @@ const card = document.querySelector(`.card`)
 const cocktailInput = document.querySelector(`#cocktail`)
 const buttonCocktail = document.querySelector(`#scegli`)
 async function cocktailFetch() {
-    card.innerHTML=``
-    cocktailInput.value =``
-    const cocktail = cocktailInput.value   
+    //svuoto l'html
+    card.innerHTML = ``
+    
+    const cocktail = cocktailInput.value
     const res = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktail}`)
     const cocktailData = await res.json()
     const cocktails = cocktailData.drinks[0]
@@ -15,7 +16,7 @@ async function cocktailFetch() {
     card.appendChild(image)
 
     const title = document.createElement(`h2`)
-    title.textContent =  cocktails.strDrink
+    title.textContent = cocktails.strDrink
     title.classList.add(`title`)
     card.appendChild(title)
 
@@ -23,5 +24,15 @@ async function cocktailFetch() {
     instruction.textContent = cocktails.strInstructionsIT
     instruction.classList.add(`instruction`)
     card.appendChild(instruction)
+
+    cocktailInput.value=``
+
+
+
 }
 buttonCocktail.addEventListener(`click`, cocktailFetch)
+window.addEventListener(`keydown`, (e) => {
+    if (e.key === `Enter`) {
+        cocktailFetch()
+    }
+})
